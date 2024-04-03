@@ -4,3 +4,6 @@ node_modules
 apikeys.txt
 [0-9]*/ 
 .DS_Store
+server/__pycache__
+server/trading_agents/__pycache__
+server/deep_learning_models/__pycache__
