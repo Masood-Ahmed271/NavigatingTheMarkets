@@ -37,6 +37,3 @@ def get_response(company):
     )
 
     return completion.choices[0].message.content
-
-
-# print(get_response('CRM')) #debugging

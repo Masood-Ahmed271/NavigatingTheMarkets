@@ -72,7 +72,6 @@ def map_bin_label(bin_lb):
     lb = lb.replace('4', '3-4%')
     if lb.endswith('+'):
         lb = lb.replace('5+', 'more than 5%')
-#         lb = lb.replace('5+', '5+%')
     else:
         lb = lb.replace('5', '4-5%')
 
@@ -141,8 +140,6 @@ def get_prompt(symbol):
 
     print(SYSTEM_PROMPT)
 
-    # prompts = get_all_prompts("AAPL", 1, 3)
-    # prompts = get_all_prompts("MSFT", 1, 3, False)
     prompts = get_all_prompts(symbol, 1, 4)
 
     return prompts

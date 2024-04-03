@@ -1,14 +1,15 @@
 import matplotlib.pyplot as plt
 
+
 def buy_stock(
-    df, 
+    df,
     debug,
     real_movement,
-    delay = 5,
-    initial_state = 1,
-    initial_money = 10000,
-    max_buy = 1,
-    max_sell = 1,
+    delay=5,
+    initial_state=1,
+    initial_money=10000,
+    max_buy=1,
+    max_sell=1,
 ):
     """
     real_movement = actual movement in the real world
@@ -28,12 +29,12 @@ def buy_stock(
     current_inventory = 0
     logs = []
 
-    def print_log(message): 
-        for key, value in message.items(): 
+    def print_log(message):
+        for key, value in message.items():
             if key in ["balance", "current_unit_price", "current_action_price", "investment"]:
-                print(f"{key}: {round(value, 2)} | ",end = "")
+                print(f"{key}: {round(value, 2)} | ", end="")
                 continue
-            print(f"{key}: {value} | ",end = "")
+            print(f"{key}: {value} | ", end="")
         print()
 
     def buy(i, initial_money, current_inventory):
@@ -52,7 +53,8 @@ def buy_stock(
 
             logs.append(message)
 
-            if debug: print_log(message)
+            if debug:
+                print_log(message)
         else:
             if shares > max_buy:
                 buy_units = max_buy
@@ -71,7 +73,8 @@ def buy_stock(
             message["current_action_price"] = buy_units * real_movement[i]
             logs.append(message)
 
-            if debug: print_log(message)
+            if debug:
+                print_log(message)
 
             states_buy.append(0)
         return initial_money, current_inventory
@@ -133,13 +136,13 @@ def buy_stock(
                     message["inventory"] = current_inventory
                     message["action"] = "sell"
                     message["units"] = sell_units
-                    # message["note"] = "not enough money to buy"
                     message["current_unit_price"] = real_movement[i]
                     message["current_action_price"] = total_sell
                     message["investment"] = invest
                     logs.append(message)
 
-                    if debug: print_log(message)
+                    if debug:
+                        print_log(message)
 
                 current_decision = 0
                 states_sell.append(i)
@@ -148,22 +151,21 @@ def buy_stock(
     total_gains = initial_money - starting_money
     return logs, states_buy, states_sell, total_gains, invest
 
-def roll(debug, show_graph, df, initial_money, max_buy, max_sell): 
-    # if debug: print(df.head(5))
+
+def roll(debug, show_graph, df, initial_money, max_buy, max_sell):
     print("\n\ninside function running single rolling agent\n\n")
-    logs, states_buy, states_sell, total_gains, invest = buy_stock(df=df, debug=debug, real_movement=df.Close, initial_state=1, delay=4, initial_money=initial_money, max_buy=max_buy, max_sell=max_sell)
+    logs, states_buy, states_sell, total_gains, invest = buy_stock(
+        df=df, debug=debug, real_movement=df.Close, initial_state=1, delay=4, initial_money=initial_money, max_buy=max_buy, max_sell=max_sell)
     close = df['Close']
-    if show_graph:    
-        fig = plt.figure(figsize = (15,5))
+    if show_graph:
+        fig = plt.figure(figsize=(15, 5))
         plt.plot(close, color='r', lw=2.)
-        plt.plot(close, '^', markersize=10, color='m', label = 'buying signal', markevery = states_buy)
-        plt.plot(close, 'v', markersize=10, color='k', label = 'selling signal', markevery = states_sell)
-        plt.title('total gains %f, total investment %f%%'%(total_gains, invest))
+        plt.plot(close, '^', markersize=10, color='m',
+                 label='buying signal', markevery=states_buy)
+        plt.plot(close, 'v', markersize=10, color='k',
+                 label='selling signal', markevery=states_sell)
+        plt.title('total gains %f, total investment %f%%' %
+                  (total_gains, invest))
         plt.legend()
         plt.show()
     return states_buy, states_sell, total_gains, invest, logs, close.tolist()
-    
-    
-# if __name__ == '__main__':
-#     df_path = "../dataset/GOOG-year.csv"
-#     main(debug=True, show_graph=True, df_path=df_path)

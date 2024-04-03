@@ -1,9 +1,7 @@
-# import prompt_generation
 from .prompt_generation import *
 import os
 import finnhub
 from .data_preparation import *
-# import data_preparation
 import random
 
 finnhub_client = finnhub.Client(
@@ -29,8 +27,3 @@ def get_news(symbol):
 
     # Return any 3 headlines randomly
     return random.sample(headlines, 3)
-
-
-# Testing
-# print(get_introduction('AAPL'))
-# print(get_news('CRM'))
