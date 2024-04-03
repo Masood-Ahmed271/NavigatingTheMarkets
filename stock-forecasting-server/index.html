@@ -1,0 +1,353 @@
+<html>
+
+<head>
+  <title>FYP</title>
+  <link rel="icon" href="./screenshot/favicon.ico" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap"
+    rel="stylesheet">
+  <link href="css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  <style>
+    .close-first {
+      display: none;
+    }
+
+    .sidenav {
+      height: 100%;
+      width: 21%;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background-color: #fff;
+      overflow-x: hidden;
+      padding-top: 20px;
+    }
+
+    .vl {
+      border-left: 3.5px solid rgb(62, 43, 241);
+      border-radius: 5px;
+      height: 35px;
+    }
+
+    .sidenav a {
+      padding: 6px 8px 6px 16px;
+      text-decoration: none;
+      font-size: 20px;
+      color: #818181;
+      display: block;
+    }
+
+    .sidenav a:hover {
+      color: #000;
+    }
+
+    .sidenav a.active {
+      color: rgb(29, 37, 72);
+      /* Change the color to your desired color */
+    }
+
+    .main {
+      margin-left: 22%;
+      /* Same as the width of the sidenav */
+      /*  font-size: 28px; /* Increased text to enable scrolling */
+      padding: 0px 10px;
+    }
+
+    @media screen and (max-height: 450px) {
+      .sidenav {
+        padding-top: 15px;
+      }
+
+      .sidenav a {
+        font-size: 18px;
+      }
+
+      .sidenav a.active {
+        color: rgb(29, 37, 72);
+        /* Change the color to your desired color */
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="sidenav">
+    <a href="http://localhost:3000/" style="color:rgb(29, 37, 72); 
+      font-weight: 600; font-size: 24px; 
+      padding-top: 5px; padding-left: 14%; 
+      font-family: 'DM Sans', sans-serif;
+      padding-bottom: 6%;">Navigating
+      The
+      Markets</a>
+    <hr style="width: 90%; opacity: 40%; margin-bottom: 10%;">
+    <div style="margin-left: 11%;
+    font-family: 'DM Sans', sans-serif;">
+      <div style="display: flex;">
+        <a href="http://localhost:3000/#/admin/default"
+          style="color: #8F9BBA; font-weight: 400; font-size: 20px; padding-bottom: 7%;">
+          <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" focusable="false"
+            class="chakra-icon css-18176s2" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+            <path fill="none" d="M0 0h24v24H0V0z"></path>
+            <path
+              d="M15.55 13c.75 0 1.41-.41 1.75-1.03l3.58-6.49A.996.996 0 0020.01 4H5.21l-.94-2H1v2h2l3.6 7.59-1.35 2.44C4.52 15.37 5.48 17 7 17h12v-2H7l1.1-2h7.45zM6.16 6h12.15l-2.76 5H8.53L6.16 6zM7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zm10 0c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z">
+            </path>
+          </svg>
+        </a>
+        <a href="http://localhost:3000/#/admin/default"
+          style="color: #8F9BBA; font-weight: 400; font-size: 15px; padding-bottom: 7%; padding-left: 4%;">
+          Widgets
+        </a>
+      </div>
+      <div style="display: flex;">
+        <a href="http://localhost:3000/#/admin/algotrading"
+          style="color: rgb(62, 43, 241); font-weight: 400; font-size: 20px; padding-bottom: 6%;">
+          <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" focusable="false"
+            class="chakra-icon css-18176s2" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+            <path fill="none" d="M0 0h24v24H0z"></path>
+            <path
+              d="M14.06 9.94L12 9l2.06-.94L15 6l.94 2.06L18 9l-2.06.94L15 12l-.94-2.06zM4 14l.94-2.06L7 11l-2.06-.94L4 8l-.94 2.06L1 11l2.06.94L4 14zm4.5-5l1.09-2.41L12 5.5 9.59 4.41 8.5 2 7.41 4.41 5 5.5l2.41 1.09L8.5 9zm-4 11.5l6-6.01 4 4L23 8.93l-1.41-1.41-7.09 7.97-4-4L3 19l1.5 1.5z">
+            </path>
+          </svg>
+
+        </a>
+        <a href="http://localhost:3000/#/admin/algotrading"
+          style="color: rgb(29, 37, 72); font-weight: 700; font-size: 15px; padding-bottom: 6%; padding-left: 4%; padding-right: 13%;">
+          Algorithmic
+          Trading</a>
+        <div class="vl"></div>
+      </div>
+      <div style="display: flex;">
+        <a href="http://localhost:3000/#/admin/tradingagents"
+          style="color: #8F9BBA; font-weight: 400; font-size: 20px; padding-bottom: 6%;">
+          <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" focusable="false"
+            class="chakra-icon css-18176s2" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+            <path fill="none" d="M0 0h24v24H0z"></path>
+            <path
+              d="M12.89 11.1c-1.78-.59-2.64-.96-2.64-1.9 0-1.02 1.11-1.39 1.81-1.39 1.31 0 1.79.99 1.9 1.34l1.58-.67c-.15-.45-.82-1.92-2.54-2.24V5h-2v1.26c-2.48.56-2.49 2.86-2.49 2.96 0 2.27 2.25 2.91 3.35 3.31 1.58.56 2.28 1.07 2.28 2.03 0 1.13-1.05 1.61-1.98 1.61-1.82 0-2.34-1.87-2.4-2.09l-1.66.67c.63 2.19 2.28 2.78 2.9 2.96V19h2v-1.24c.4-.09 2.9-.59 2.9-3.22 0-1.39-.61-2.61-3.01-3.44zM3 21H1v-6h6v2H4.52c1.61 2.41 4.36 4 7.48 4a9 9 0 009-9h2c0 6.08-4.92 11-11 11-3.72 0-7.01-1.85-9-4.67V21zm-2-9C1 5.92 5.92 1 12 1c3.72 0 7.01 1.85 9 4.67V3h2v6h-6V7h2.48C17.87 4.59 15.12 3 12 3a9 9 0 00-9 9H1z">
+            </path>
+          </svg>
+        </a>
+        <a href="http://localhost:3000/#/admin/tradingagents"
+          style="color: #8F9BBA; font-weight: 400; font-size: 15px; padding-bottom: 6%; padding-left: 4%;">
+          Trading Agents
+        </a>
+      </div>
+      <div style="display: flex;">
+        <a href="http://localhost:3000/#/admin/finllm"
+          style="color: #8F9BBA; font-weight: 400; font-size: 20px; padding-bottom: 6%;">
+          <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" focusable="false"
+            class="chakra-icon css-18176s2" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+            <path fill="none" d="M0 0h24v24H0z"></path>
+            <circle cx="12" cy="3.5" r=".75" fill="none"></circle>
+            <circle cx="12" cy="3.5" r=".75" fill="none"></circle>
+            <path fill="none" d="M5 15v4h14V5H5z"></path>
+            <path
+              d="M11 14.17L8.83 12 11 9.83 9.59 8.41 6 12l3.59 3.59zM14.41 15.59L18 12l-3.59-3.59L13 9.83 15.17 12 13 14.17z">
+            </path>
+            <path
+              d="M19 3h-4.18C14.4 1.84 13.3 1 12 1s-2.4.84-2.82 2H5c-.14 0-.27.01-.4.04a2.008 2.008 0 00-1.44 1.19c-.1.23-.16.49-.16.77v14c0 .27.06.54.16.78s.25.45.43.64c.27.27.62.47 1.01.55.13.02.26.03.4.03h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7-.25c.41 0 .75.34.75.75s-.34.75-.75.75-.75-.34-.75-.75.34-.75.75-.75zM19 15v4H5V5h14v10z">
+            </path>
+          </svg>
+          <a href="http://localhost:3000/#/admin/finllm"
+            style="color: #8F9BBA; font-weight: 400; font-size: 15px; padding-bottom: 6%; padding-left: 4%;">
+            FinLLM
+          </a>
+      </div>
+      <div style="display: flex;">
+        <a href="http://localhost:3000/#/admin/login"
+          style="color: #8F9BBA; font-weight: 400; font-size: 20px; padding-bottom: 6%;">
+          <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" focusable="false"
+            class="chakra-icon css-18176s2" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+            <path fill="none" d="M0 0h24v24H0z"></path>
+            <path
+              d="M11 7L9.6 8.4l2.6 2.6H2v2h10.2l-2.6 2.6L11 17l5-5-5-5zm9 12h-8v2h8c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-8v2h8v14z">
+            </path>
+          </svg>
+        </a>
+        <a href="http://localhost:3000/#/admin/login"
+          style="color: #8F9BBA; font-weight: 400; font-size: 15px; padding-bottom: 6%; padding-left: 4%;">
+          Sign Up - Login
+        </a>
+      </div>
+      <div style="display: flex;">
+        <a href="http://localhost:3000/#/admin/forum"
+          style="color: #8F9BBA; font-weight: 400; font-size: 20px; padding-bottom: 6%;">
+          <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" focusable="false"
+            class="chakra-icon css-18176s2" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+            <path fill="none" d="M0 0h24v24H0z"></path>
+            <path
+              d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 9h12v2H6V9zm8 5H6v-2h8v2zm4-6H6V6h12v2z">
+            </path>
+          </svg>
+        </a>
+        <a href="http://localhost:3000/#/admin/forum"
+          style="color: #8F9BBA; font-weight: 400; font-size: 15px; padding-bottom: 6%; padding-left: 4%;">
+          Discussion Forum
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="row main" style="padding-left:10px;padding-right:10px; background-color: #E2E8F0;">
+    <ul class="collapsible" data-collapsible="accordion">
+      <li>
+        <div class="collapsible-header"><i class="material-icons" style="font-size:3rem">settings</i>
+          <div class="row" style="margin-bottom:10px;margin-top:10px">
+            <div class="col s3 m1">
+              Settings
+            </div>
+            <div class="input-field col s12 m1 right" style="margin-top:5px; width:160px">
+              <button id="trainbutton" class="waves-effect waves-light btn red lighten-2">Train</button>
+            </div>
+            <div class="input-field col s12 m1 right" style="margin-top:5px; width:160px">
+              <button id="suggestbutton" class="waves-effect waves-light btn blue lighten-2">Suggest</button>
+            </div>
+            <div class="file-field input-field col s12 m1 right" style="margin-top:5px; width:160px">
+              <div class="btn blue lighten-2" style="height:36px; line-height:2.5rem">
+                <span>Pick CSV</span>
+                <input id="uploadcsv" type="file">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="collapsible-body"><span>
+            <div class="row center">
+              <div class="input-field col m2 offset-m1" style="margin-left:5.33%">
+                Neural Network settings
+              </div>
+              <div class="input-field col s12 m1">
+                <input id="learningrate" type="number" placeholder="Eg: 0.001" class="validate tooltipped"
+                  data-position="bottom" data-delay="50" data-tooltip="learning rate during training">
+                <label class="active">Learning rate</label>
+              </div>
+              <div class="input-field col s12 m1">
+                <input id="inputdropoutrate" type="number" placeholder="Eg: 0.9" class="validate tooltipped"
+                  data-position="bottom" data-delay="50" data-tooltip="dropout rate for LSTM input">
+                <label class="active">Input dropout rate</label>
+              </div>
+              <div class="input-field col s12 m1">
+                <input id="outputdropoutrate" type="number" placeholder="Eg: 0.9" class="validate tooltipped"
+                  data-position="bottom" data-delay="50" data-tooltip="dropout rate for LSTM output">
+                <label class="active">Output dropout rate</label>
+              </div>
+              <div class="input-field col s12 m1">
+                <input id="timestamp" type="number" class="validate tooltipped" placeholder="Eg: 5"
+                  data-position="bottom" data-delay="50" data-tooltip="Trends for every minibatch">
+                <label class="active">Timestamp per training</label>
+              </div>
+              <div class="input-field col s12 m1">
+                <input id="sizelayer" type="number" class="validate tooltipped" placeholder="Eg: 64"
+                  data-position="bottom" data-delay="50" data-tooltip="LSTM size">
+                <label class="active">Size layer</label>
+              </div>
+              <div class="input-field col s12 m1">
+                <input id="epoch" type="number" class="validate tooltipped" placeholder="Eg: 10" data-position="bottom"
+                  data-delay="50" data-tooltip="Total epoch">
+                <label class="active">Training Iteration</label>
+              </div>
+              <div class="input-field col s12 m1">
+                <input id="future" type="number" class="validate tooltipped" placeholder="Eg: 10" data-position="bottom"
+                  data-delay="50" data-tooltip="number of days forecast">
+                <label class="active">Future days to forecast</label>
+              </div>
+              <div class="input-field col s12 m1">
+                <input id="smooth" type="number" class="validate tooltipped" placeholder="Eg: 10" data-position="bottom"
+                  data-delay="50" data-tooltip="Rate anchor smoothing for trends">
+                <label class="active">Smoothing weights</label>
+              </div>
+            </div>
+            <div class="row center">
+              <div class="input-field col m2 offset-m1" style="margin-left:5.33%">
+                Buying & Selling simulation
+              </div>
+              <div class="input-field col s12 m2">
+                <input id="initialmoney" type="number" placeholder="Eg: 10000" class="validate tooltipped"
+                  data-position="bottom" data-delay="50" data-tooltip="Money in for simulation">
+                <label class="active">Initial money(usd)</label>
+              </div>
+              <div class="input-field col s12 m2">
+                <input id="maxbuy" type="number" placeholder="Eg: 5" class="validate tooltipped" data-position="bottom"
+                  data-delay="50" data-tooltip="Max unit to buy">
+                <label class="active">Max buy(unit)</label>
+              </div>
+              <div class="input-field col s12 m2">
+                <input id="maxsell" type="number" class="validate tooltipped" placeholder="Eg: 10"
+                  data-position="bottom" data-delay="50" data-tooltip="Max unit to sell">
+                <label class="active">Max sell(unit)</label>
+              </div>
+              <div class="input-field col s12 m2">
+                <input id="history" type="number" class="validate tooltipped" placeholder="Eg: 5" data-position="bottom"
+                  data-delay="50" data-tooltip="MA to compare of">
+                <label class="active">Historical rolling</label>
+              </div>
+            </div>
+          </span></div>
+      </li>
+    </ul>
+  </div>
+
+
+  <h6 class='header center light' style="padding-left: 24%;">WARNING, This website may hang during training, and do not
+    use this website to buy
+    real
+    stock!<br><br>Default stock is Google 2018, you can try upload any stock CSV</h6>
+  <div class="row" style="padding-left:10px;padding-right:10px; margin-left: 22%; margin-right: 0%;">
+    <div class="col s12 m12">
+      <div id="div_output" style="height: 500px;"></div>
+    </div>
+  </div>
+  <br>
+  <div class="row close-first" style="padding-left:10px;padding-right:10px; margin-left: 22%; margin-right: 0%;">
+    <div class="col s12 m8">
+      <div id="div_dist" style="height: 450px;"></div>
+    </div>
+    <div class="col s12 m4">
+      <div class="row">
+        <div id="div_loss" style="height: 250px;"></div>
+      </div>
+      <div class="row" id="log" style="height: 150px; overflow:auto;">
+      </div>
+    </div>
+  </div>
+  <div class="row" style="padding-left:10px;padding-right:10px; margin-left: 22%; margin-right: 0%;">
+    <ul class="collapsible" data-collapsible="accordion">
+      <li>
+        <div class="collapsible-header"><i class="material-icons">archive</i>Simulation log</div>
+        <div class="collapsible-body"><span>
+            <table class="bordered highlight">
+              <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>Action</th>
+                  <th>Price</th>
+                  <th>Investment</th>
+                  <th>Balance</th>
+                </tr>
+              </thead>
+              <tbody id='table-body'>
+              </tbody>
+            </table><br>
+            <span id="log-invest"></span>
+          </span></div>
+      </li>
+    </ul>
+  </div>
+  <div class="row center" id="color-investment" style="margin-left: 22%; margin-right: 0%;">
+  </div>
+  <script src="js/tf.js"></script>
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/materialize.min.js"></script>
+  <script src="js/d3.v3.min.js"></script>
+  <script src="js/numeric-1.2.6.min.js"></script>
+  <script src="js/numjs.min.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/echarts.min.js"></script>
+  <script src="js/echarts-gl.min.js"></script>
+  <script src="js/papaparse.min.js"></script>
+  <script src="data/google.js"> </script>
+  <script src="init.js"> </script>
+</body>

@@ -1,0 +1,4 @@
+__pycache__/
+testing.py
+#ignore all repositories starting with a number
+[0-9]*/ 

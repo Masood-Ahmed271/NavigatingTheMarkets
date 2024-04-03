@@ -1,0 +1,6 @@
+node_modules
+.env
+.vscode
+apikeys.txt
+[0-9]*/ 
+.DS_Store
