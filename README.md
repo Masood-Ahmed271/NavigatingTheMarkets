@@ -1,6 +1,6 @@
 # Navigating The Markets - FYP Project for HKU Computer Science (Group fyp23070)
 
-_Link To The Github Repository Of The Code:_ <a href="https://github.com/Codes-of-Aryan/navigating-the-markets/" target="_blank"> GitHub Repository </a> <br>
+_Link To The Original Github Repository Of The Code:_ <a href="https://github.com/Codes-of-Aryan/navigating-the-markets/" target="_blank"> GitHub Repository </a> <br>
 _Link To Wordpress Website Showing Project Information:_ <a href="https://wp2023.cs.hku.hk/fyp23070/" target="_blank"> Word Press Website </a> <br>
 _Link To Video Demo:_ <a href="https://youtu.be/cNNRaVle3F4" target="_blank"> Final Year Project Video </a> <br>
 _Link To The Poster:_ <a href="https://connecthkuhk-my.sharepoint.com/:b:/g/personal/masood20_connect_hku_hk/Ec-b5xScsMdIuYESOHHh86IBUpjJk9m-20hghb0AWzo-RQ?e=m250nP" target="_blank"> Project Poster </a> <br>
