@@ -15,6 +15,7 @@ import { useHistory } from "react-router-dom";
 import Collapsible from "components/collapsible/Collapisble";
 import LoginImg from "assets/img/discussionForum/login.png";
 import Card from "components/card/Card";
+import { API_ENDPOINT } from "constants";
 
 export default function WidgetPage() {
   const textColor = useColorModeValue("navy.700", "white");
@@ -40,7 +41,7 @@ export default function WidgetPage() {
     }
     if (isLoggedIn) {
       axios
-        .get("http://127.0.0.1:5000/all-topics")
+        .get(API_ENDPOINT + "all-topics")
         .then(function (response) {
           console.log(response);
           console.log(response.data);
@@ -57,7 +58,7 @@ export default function WidgetPage() {
   }, [isLoggedIn]);
 
   const handleLogout = () => {
-    axios.get("http://127.0.0.1:5000/logout").then(function (response) {
+    axios.get(API_ENDPOINT + "logout").then(function (response) {
       console.log(response);
       console.log(response.data);
       localStorage.setItem("Status", JSON.stringify("logged Out"));
@@ -87,7 +88,7 @@ export default function WidgetPage() {
     }
 
     axios
-      .post("http://127.0.0.1:5000/all-topics", {
+      .post(API_ENDPOINT + "all-topics", {
         title: title,
         description: description,
         userId: userId,

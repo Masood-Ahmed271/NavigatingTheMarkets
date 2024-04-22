@@ -1,9 +1,10 @@
 import CommonModel from "./common/CommonModal";
+import { API_ENDPOINT } from "constants";
 
 
 export default function AutoencoderModal(props) {
 
-    const api = "http://127.0.0.1:5000/autoendcoder_model"
+    const api = API_ENDPOINT + "autoendcoder_model";
     const description = `This is an implementation of an autoencoder model for stock price prediction. It takes stock data,
                          window size, training rate, batch size, and number of epochs as input. The model consists of 
                          an input layer, an encoding layer with a specified number of dimensions, a decoding layer, and an

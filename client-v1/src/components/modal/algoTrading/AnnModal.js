@@ -1,9 +1,11 @@
 import CommonModel from "./common/CommonModal";
+import { API_ENDPOINT } from "constants";
 
 
 export default function AnnModal(props) {
 
-    const api = "http://127.0.0.1:5000/basic_ann_model"
+    // const api = "http://127.0.0.1:5000/basic_ann_model"
+    const api = API_ENDPOINT + "basic_ann_model";
     const description = `This is an implementation of an artificial neural network (ANN) model for stock price prediction.
                          It takes stock data, window size, training rate, dropout rate, batch size, and number of epochs as input.
                          The model consists of three dense layers with dropout layers for regularization. It is compiled with the

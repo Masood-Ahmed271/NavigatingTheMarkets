@@ -4,6 +4,7 @@ import { useHistory } from "react-router-dom";
 // import { Route } from "react-router-dom";
 // import { useNavigate, Route } from "react-router-dom";
 import Card from "components/card/Card.js";
+import { API_ENDPOINT } from "constants";
 
 import {
   Box,
@@ -36,7 +37,7 @@ function Login() {
       alert("UserName has been left Blank!");
     } else {
       axios
-        .post("http://127.0.0.1:5000/login", {
+        .post(API_ENDPOINT + "login", {
           email: email,
           password: password,
           username: username,

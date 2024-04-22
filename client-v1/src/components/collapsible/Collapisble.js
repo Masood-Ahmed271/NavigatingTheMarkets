@@ -13,6 +13,7 @@ import {
 import axios from "axios";
 import { MdTopic } from "react-icons/md";
 import Card from "components/card/Card.js";
+import { API_ENDPOINT } from "constants";
 
 const Collapsible = ({ children, title, author, id }) => {
     const textColor = useColorModeValue("navy.700", "white");
@@ -28,7 +29,7 @@ const Collapsible = ({ children, title, author, id }) => {
 
     useEffect(() => {
         if (id) {
-            const commentApi = "http://127.0.0.1:5000/topic/" + id;
+            const commentApi = API_ENDPOINT + "topic/" + id;
             axios
                 .get(commentApi)
                 .then(function (response) {
@@ -55,7 +56,8 @@ const Collapsible = ({ children, title, author, id }) => {
     const postComment = () => {
         const userId = localStorage.getItem("UserId");
         const userName = localStorage.getItem("Username");
-        const commentapi = "http://127.0.0.1:5000/topic/" + id;
+        // const commentapi = "http://127.0.0.1:5000/topic/" + id;
+        const commentapi = API_ENDPOINT + "topic/" + id;
 
         // Validation Checks
         if (!userComment || !userId || !userName) {
@@ -165,6 +167,7 @@ const Collapsible = ({ children, title, author, id }) => {
                                             border: "gray solid",
                                             borderRadius: 5,
                                             padding: 10,
+                                            width: "100%"
                                         }}
                                         color={textColor}
                                     >

@@ -1,9 +1,10 @@
 import CommonModel from "./common/CommonModal";
+import { API_ENDPOINT } from "constants";
 
 
 export default function LstmTwoModal(props) {
 
-    const api = "http://127.0.0.1:5000/lstm_model_three"
+    const api = API_ENDPOINT + "lstm_model_three";
     const description = `This is an implementation of a stock price prediction models that is designed to forecast stock
     prices using LSTM neural networks. It takes stock data, window size, training rate, dropout rate, batch size, LSTM units,
     and training epochs as input.

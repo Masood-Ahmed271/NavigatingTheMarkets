@@ -7,7 +7,6 @@ import random
 import pkg_resources
 import types
 
-
 class Deep_Evolution_Strategy:
 
     inputs = None
@@ -32,7 +31,7 @@ class Deep_Evolution_Strategy:
     def get_weights(self):
         return self.weights
 
-    def train(self, epoch=100, print_every=1):
+    def train(self, epoch = 100, print_every = 1):
         lasttime = time.time()
         for i in range(epoch):
             population = []
@@ -61,8 +60,8 @@ class Deep_Evolution_Strategy:
                     'iter %d. reward: %f'
                     % (i + 1, self.reward_function(self.weights))
                 )
-                self.performance.append(
-                    {"epoch": i+1, "reward": self.reward_function(self.weights)})
+                # self.performance.append((i+1, self.reward_function(self.weights)))
+                self.performance.append({"epoch": i+1, "reward": self.reward_function(self.weights)})
         print('time taken to train:', time.time() - lasttime, 'seconds')
         return self.performance
 
@@ -87,7 +86,6 @@ class Model:
 
     def set_weights(self, weights):
         self.weights = weights
-
 
 class Agent:
 
@@ -152,7 +150,7 @@ class Agent:
         return ((initial_money - starting_money) / starting_money) * 100
 
     def fit(self, iterations, checkpoint):
-        self.performance = self.es.train(iterations, print_every=checkpoint)
+        self.performance = self.es.train(iterations, print_every = checkpoint)
 
     def buy(self):
         self.logs = []
@@ -178,11 +176,13 @@ class Agent:
                 inventory.append(total_buy)
                 quantity += buy_units
                 states_buy.append(t)
-                message = {"day": t+1, "action": "buy", "units": buy_units,
-                           "units": total_buy, "balance": initial_money}
+                message = {"day": t+1, "action": "buy", "units": buy_units, "units": total_buy, "balance": initial_money}
                 self.logs.append(message)
-                if self.debug:
-                    print(message)
+                if self.debug: print(message)
+                # print(
+                #     'day %d: buy %d units at price %f, total balance %f'
+                #     % (t, buy_units, total_buy, initial_money)
+                # )
             elif action == 2 and len(inventory) > 0:
                 bought_price = inventory.pop(0)
                 if quantity > self.max_sell:
@@ -200,42 +200,45 @@ class Agent:
                 except:
                     invest = 0
 
-                message = {"day": t+1, "action": "sell", "units": sell_units,
-                           "total units": total_sell, "balance": initial_money, "invest": invest}
-
+                message = {"day": t+1, "action": "sell", "units": sell_units, "total units": total_sell, "balance": initial_money, "invest": invest}
+                
                 self.logs.append(message)
-                if self.debug:
-                    print(message)
+                if self.debug: print(message)
+                # print(
+                #     'day %d, sell %d units at price %f, investment %f %%, total balance %f,'
+                #     % (t, sell_units, total_sell, invest, initial_money)
+                # )
             state = next_state
 
         invest = ((initial_money - starting_money) / starting_money) * 100
-        message = {"day": t+1, "total_gained": initial_money -
-                   starting_money, "total_investment": invest}
+        # message = f"\ntotal gained {initial_money - starting_money}, total investment {invest} %%"
+        message = {"day": t+1, "total_gained": initial_money - starting_money, "total_investment": invest}
         self.logs.append(message)
-        if self.debug:
-            print(message)
-
-        if self.show_graph:
+        if self.debug: print(message)
+        # print(
+        #     '\ntotal gained %f, total investment %f %%'
+        #     % (initial_money - starting_money, invest)
+        # )
+        if self.show_graph: 
             self.show_plot(states_buy, states_sell)
 
         return self.logs, states_buy, states_sell, self.performance
 
     def show_plot(self, states_buy, states_sell):
-        plt.figure(figsize=(20, 10))
-        plt.plot(self.close, label='true close', c='g')
+        plt.figure(figsize = (20, 10))
+        plt.plot(self.close, label = 'true close', c = 'g')
         plt.plot(
-            self.close, 'X', label='predict buy', markevery=states_buy, c='b'
+            self.close, 'X', label = 'predict buy', markevery = states_buy, c = 'b'
         )
         plt.plot(
-            self.close, 'o', label='predict sell', markevery=states_sell, c='r'
+            self.close, 'o', label = 'predict sell', markevery = states_sell, c = 'r'
         )
         plt.legend()
         plt.show()
 
-
 def get_state(data, t, n):
     d = t - n + 1
-    block = data[d: t + 1] if d >= 0 else -d * [data[0]] + data[0: t + 1]
+    block = data[d : t + 1] if d >= 0 else -d * [data[0]] + data[0 : t + 1]
     res = []
     for i in range(n - 1):
         res.append(block[i + 1] - block[i])
@@ -248,11 +251,11 @@ def evolve(df, iterations=500, checkpoint=10):
     length = len(close) - 1
 
     model = Model(window_size, 500, 3)
-    agent = Agent(model, 10000, 5, 5, window_size, close,
-                  skip, length, show_graph=False, debug=False)
+    agent = Agent(model, 10000, 5, 5, window_size, close, skip, length, show_graph=False, debug=False)
     agent.fit(iterations, checkpoint)
+    
 
     print("\n\ninside function evolution stratergy agent\n\n")
-
+    
     logs, states_buy, states_sell, performance = agent.buy()
     return states_buy, states_sell, logs, performance, close

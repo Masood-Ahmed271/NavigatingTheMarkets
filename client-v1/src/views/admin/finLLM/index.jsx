@@ -10,6 +10,7 @@ import {
 import FinLLMBox from "./finLLMBox";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { API_ENDPOINT } from "constants";
 
 export default function WidgetPage() {
   // Chakra Color Mode
@@ -75,7 +76,7 @@ export default function WidgetPage() {
     );
     console.log("Sending Request");
     try {
-      const response = await axios.post("http://127.0.0.1:5000/finllm", fd);
+      const response = await axios.post(API_ENDPOINT + "finllm", fd);
       const data = response.data;
       console.log(data);
       setDevelopments(data["positiveDevelopments"]);

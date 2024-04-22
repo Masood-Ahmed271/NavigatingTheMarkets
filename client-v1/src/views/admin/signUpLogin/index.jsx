@@ -6,6 +6,7 @@ import { useHistory } from "react-router-dom";
 import Signup from "components/SignUpLogin/Signup";
 import Login from "components/SignUpLogin/Login";
 import LoggedInImg from "assets/img/discussionForum/logged.png";
+import { API_ENDPOINT } from "constants";
 
 export default function WidgetPage() {
   const [signupTrue, setSignupTrue] = useState(false);
@@ -39,7 +40,7 @@ export default function WidgetPage() {
   };
 
   const handleLogout = () => {
-    axios.get("http://127.0.0.1:5000/logout").then(function (response) {
+    axios.get(API_ENDPOINT + "logout").then(function (response) {
       console.log(response);
       console.log(response.data);
       localStorage.setItem("Status", JSON.stringify("logged Out"));

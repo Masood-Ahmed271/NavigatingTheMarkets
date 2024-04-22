@@ -1,6 +1,10 @@
 # Navigating The Markets - FYP Project for HKU Computer Science (Group fyp23070)
 
-_Link To Video Demo:_ <a href=""> Will Upload Soon </a> <br>
+_Link To The Github Repository Of The Code:_ <a href="https://github.com/Codes-of-Aryan/navigating-the-markets/" target="_blank"> GitHub Repository </a> <br>
+_Link To Wordpress Website Showing Project Information:_ <a href="https://wp2023.cs.hku.hk/fyp23070/" target="_blank"> Word Press Website </a> <br>
+_Link To Video Demo:_ <a href="https://youtu.be/cNNRaVle3F4" target="_blank"> Final Year Project Video </a> <br>
+_Link To The Poster:_ <a href="https://connecthkuhk-my.sharepoint.com/:b:/g/personal/masood20_connect_hku_hk/Ec-b5xScsMdIuYESOHHh86IBUpjJk9m-20hghb0AWzo-RQ?e=m250nP" target="_blank"> Project Poster </a> <br>
+_Link To The Presentation:_ <a href="https://connecthkuhk-my.sharepoint.com/:b:/g/personal/masood20_connect_hku_hk/EQJyb5oXri5Cr45AMjJv3v4BY_zbWLq9rjnwPwVv3bHdig?e=UWmLyg" target="_blank"> Project Presentation </a> <br>
 
 <p>
   </a>
@@ -15,13 +19,13 @@ _Link To Video Demo:_ <a href=""> Will Upload Soon </a> <br>
 ---
 
 Author: Masood Ahmed <br>
-Email: 'masood20@connect.hku.hk'<br>
+Email: masood20@connect.hku.hk <br>
 
 Author: Aryan Agarwal <br>
-Email: 'u3581237@connect.hku.hk'<br>
+Email: u3581237@connect.hku.hk <br>
 
 Author: Arnav Rajiv <br>
-Email: 'u3570905@connect.hku.hk'<br>
+Email: u3570905@connect.hku.hk <br>
 
 ---
 
@@ -118,7 +122,7 @@ serve -l 8000
 
 ```bash
 cd server
-pip install -r requirements. txt
+pip install -r requirements.txt
 python3 -m flask --app server.py run
 ```
 
@@ -147,7 +151,7 @@ chmod +x run.sh (You need to do this once)
 - Can look and run deep learning agents with different parameters on the choosen stock data (OHLCV). Here is a sample data:
   [Google](test/GOOG-year.csv). This will allow them see how each deep learning algorithm works on stocks by showing them Epoch Loss Curve and Price Prediction Graphs.
 - Trading Agents: Multiple different trading agents are available to the user to choose from which can be used by the user to make predictions on the choosen stock data and find buy and sell points.
-- FinLLM: A Large Language Model trained on financial data to provide positive developments, potential concerns, summary, prediction & anlysis and news related to the choosen stock. (**NOTE:** In order to use this feature, you need to have a valid API key for the OpenAI API. You can get one for free [here](https://platform.openai.com/account/api-keys). You also need to have a valid Finnhub API Key as well.The API key is used to authenticate and access the Finnhub API. You can sign up and obtain an API key from the Finnhub website.) A traditional LLAMA model is also available to the user to provide detailed analysis of the chosen stock, however, the performance of GPT4 was much better. Therefore, current version of the application makes use of GPT4.
+- FinLLM: A Large Language Model trained on financial data to provide positive developments, potential concerns, summary, prediction & anlysis and news related to the choosen stock. (**NOTE:** In order to use this feature, you need to have a valid API key for the OpenAI API. You also need to have a valid Finnhub API Key as well.The API key is used to authenticate and access the Finnhub API. You can sign up and obtain an API key from the Finnhub website.) A traditional LLAMA model is also available to the user to provide detailed analysis of the chosen stock, however, the performance of GPT4 was much better. Therefore, current version of the application makes use of GPT4.
 
 ## Feedback
 

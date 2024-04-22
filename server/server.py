@@ -28,6 +28,8 @@ import time
 import re
 
 app = Flask(__name__)
+# CORS(app, origins=["http://localhost:3000"])
+# CORS(app)
 
 app.config['SECRET_KEY'] = 'tetsst'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///flaskdb.db'
@@ -265,6 +267,7 @@ def lstm_model_one():
 
     print("running")
 
+    # threading.Thread(target=lstm_one, args=(stk_data,window_size,train_rate, drop_rate, batch_size, lstm_gru_units)).start()
     df1, df2, model_loss, mean_norm_rmse, mean_rmse, mean_mape = l1.lstm_one(
         stk_data, window_size, train_rate, drop_rate, batch_size, lstm_gru_units, epochs)
 
@@ -759,9 +762,11 @@ def topic():
             username = username[1:-1]
 
         topic = Topic(
+            # userId=session['user_id'],   # get the id from session
             userId=userId,   # get the id from session
             title=request.json['title'],
             description=request.json['description'],
+            # username=session['user_name'],     # get the username from session
             username=username,     # get the username from session
         )
 
@@ -793,8 +798,10 @@ def comments(id):
         if username[0] == '"' or username[0] == "'":
             username = username[1:-1]
         comment = Comment(
+            # userId=session['user_id'],   # get the id from session
             userId=userId,   # get the id from session
             text=request.json['text'],
+            # username=session['user_name'],   # get the username from session
             username=username,     # get the username from session
             topicId=id
         )
@@ -843,6 +850,10 @@ def finllm():
     resposne_3 = gn.get_introduction(input_ticker)
     resposne_3 = re.sub(r'\[[^\]]+\]\s*:', '', resposne_3)
 
+    # response = {"positiveDevelopments": response[0],
+    #             "potentialConcerns": response[1],
+    #             "predictionAnlysis": response[2],
+    #             "summary": resposne_3, "news": '\n'.join(news)}
     response = {"positiveDevelopments": resposne_0,
                 "potentialConcerns": resposne_1,
                 "predictionAnlysis": resposne_2,

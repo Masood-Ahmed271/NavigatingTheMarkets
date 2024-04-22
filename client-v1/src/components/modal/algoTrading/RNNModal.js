@@ -1,9 +1,10 @@
 import CommonModel from "./common/CommonModal";
+import { API_ENDPOINT } from "constants";
 
 
 export default function RNNModal(props) {
 
-    const api = "http://127.0.0.1:5000/rnn_model"
+    const api = API_ENDPOINT + "rnn_model";
     const description = `This is an implementation of a recurrent neural network (RNN) model for stock price prediction.
                          It takes stock data, window size, training rate, batch size, and number of epochs as input.
                          The model consists of a SimpleRNN layer with four units, followed by a dense layer with one output

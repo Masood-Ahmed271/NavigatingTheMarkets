@@ -1,9 +1,9 @@
 import CommonModel from "./common/CommonModal";
-
+import { API_ENDPOINT } from "constants";
 
 export default function GruThreeModal(props) {
 
-    const api = "http://127.0.0.1:5000/gru_model_three"
+    const api = API_ENDPOINT + "gru_model_three";
     const description = `This is an implementation of a stock price prediction using the GRU (Gated Recurrent Unit) neural
     network. It takes stock data, window size, training rate, dropout rate, batch size, GRU units, and number of epochs as input.
     The model consists of a three GRU layers, followed by a dropout layer for regularization, and a dense layer

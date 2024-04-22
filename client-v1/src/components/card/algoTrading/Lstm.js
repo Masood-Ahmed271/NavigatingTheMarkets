@@ -3,6 +3,7 @@ import Card from "components/card/Card.js";
 import React from "react";
 // import LstmModal from "components/modal/algoTrading/LSTMMod";
 // import LstmModal from "components/modal/algoTrading/LstmModal";
+import { SECOND_SERVER } from "constants";
 
 export default function LstmCard(props) {
     const { image, fullModelName, modelName } = props;
@@ -73,7 +74,7 @@ export default function LstmCard(props) {
                         }}
                         mt="25px"
                     >
-                        <a href="http://localhost:8000">
+                        <a href={SECOND_SERVER}>
                             <Button
                                 m={4}
                                 variant="brand">

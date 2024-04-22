@@ -14,6 +14,7 @@ import {
   Input,
   Stack,
 } from "@chakra-ui/react";
+import { API_ENDPOINT } from "constants";
 
 function Signup() {
   const [email, setEmail] = useState("");
@@ -24,7 +25,7 @@ function Signup() {
 
   const registerUser = () => {
     axios
-      .post("http://127.0.0.1:5000/signup", {
+      .post(API_ENDPOINT + "signup", {
         email: email,
         password: password,
         username: username,
