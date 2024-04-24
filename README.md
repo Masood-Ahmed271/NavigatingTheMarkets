@@ -137,6 +137,12 @@ chmod +x run.sh (You need to do this once)
 ./run.sh
 ```
 
+## Contributing
+Check out our [contributing guidelines](https://github.com/Masood-Ahmed271/NavigatingTheMarkets/wiki/Contributing-Guidelines) for ways to offer feedback and contribute.
+
+## Funding and Support
+For providing funding and support to this project, please reach out to mangimasood2000@gmail.com or masood20@connect.hku.hk or at https://www.linkedin.com/in/masood/. Any kind of support and funding is appreciated.
+
 ## Documentation
 
 - [API Endpoints Documentation](Documentation/backendServerDocumentation.md)
