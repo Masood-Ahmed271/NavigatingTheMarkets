@@ -162,7 +162,7 @@ For providing funding and support to this project, please reach out to mangimaso
 
 ## Feedback
 
-Pull requests are welcome. For feedback and suggestions, please reach out to Group fyp23070 at the following email: aryanshkumail@gmail.com or at any of the above author emails provided. 
+Pull requests are welcome. For feedback and suggestions, please reach out to Group fyp23070 at the following email: mangimasood2000@gmail.com or at any of the above author emails provided. 
 
 ## License
 
